@@ -1,12 +1,12 @@
 import { Router } from "express";
 
-// const teamsRouter = require("./teams.js");
 import studentsRouter from "./students.js";
+import schoolsRouter from "./schools.js";
 
 const router = Router();
 
-// router.use("/teams", auth.verifyToken, teamsRouter);
-
-
+router.get("/", (req, res) => res.send("<h1>Activo papa<h1/>"));
+router.use("/students", studentsRouter);
+router.use("/schools", schoolsRouter);
 
 export default router;
